@@ -1,0 +1,9 @@
+.submit{
+    width: 500px;
+    margin-left: 440px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px gray;
+}
+#calculation{
+    display: none;
+}
