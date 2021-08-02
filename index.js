@@ -9,18 +9,25 @@ document.getElementById('logbtn').addEventListener("click",function(){
 const setAllValue=(method)=>{
     let InputValue=document.getElementById(`${method}Input`);
     let oldBalance=document.getElementById(`${method}balance`)
+    let oldTotal=document.getElementById('totalbal');
  
     let updateInput=parseInt(InputValue.value)
     let numberInput=parseInt(oldBalance.innerHTML)
+
+    if (updateInput>0) {
         oldBalance.innerText=updateInput+numberInput;
-    let oldTotal=document.getElementById('totalbal');
        const oldTotalBal=parseInt(oldTotal.innerHTML)
-        oldTotal.innerHTML=oldTotalBal+updateInput;
- 
+        if (method=='deposite'){
+            oldTotal.innerHTML=oldTotalBal+updateInput;
+        }else{
 
-
-let withdrawTotal=document.getElementById('totalbal');
-   const withdrawTotalBal=parseInt(withdrawTotal.innerHTML)
-    withdrawTotal.innerHTML=withdrawTotalBal-updateWithInput;
-
+            if (oldTotalBal>0 && oldTotalBal>=updateInput) {
+                oldBalance.innerText=updateInput+numberInput;
+                oldTotal.innerHTML=oldTotalBal-updateInput;
+            }else{
+                alert('wrong')
+                oldBalance.innerText=0
+            }
+        }
+    }
 }
