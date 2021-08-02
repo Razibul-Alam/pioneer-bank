@@ -1,21 +1,30 @@
-var loginbtn=document.getElementById('logbtn');
-loginbtn.addEventListener("click",function(){
-    var loginarea=document.getElementById('loginarea');
+// ***** select enter button and hide login form 
+var loginarea=document.getElementById('loginarea');
+var calculation=document.getElementById('calculation');
+document.getElementById('logbtn').addEventListener("click",function(){
     loginarea.style.display='none'; // hide login section
-
-    var calculation=document.getElementById('calculation');
     calculation.style.display='block'; // enter account
-
-    var depositbutn=document.getElementById('depbtn');
-    depositbutn.addEventListener('click',function(){
-        var depinpt=document.getElementById('depinpt').value;
-        
-       var depbalance=document.getElementById('depBalance').value;
-      var depositebalacne=parseFloat(depbalance);
-      console.log(depinpt+depositebalacne)
-    
-       
-       
-        
-    })
 })
+
+const setAllValue=(method)=>{
+ if (method=='increase') {
+    let depositeInput=document.getElementById('depinpt');
+    let updateInput=parseInt(depositeInput.value)
+    let depositeOldBalance=document.getElementById('depBalance')
+    let depositeValue=parseInt(depositeOldBalance.innerHTML)
+        depositeOldBalance.innerText=updateInput+depositeValue;
+    let oldTotal=document.getElementById('totalbal');
+       const oldTotalBal=parseInt(oldTotal.innerHTML)
+        oldTotal.innerHTML=oldTotalBal+updateInput;
+ }
+else{
+    let withdrawInput=document.getElementById('withinpt');
+let updateWithInput=parseInt(withdrawInput.value)
+let withdrawOldBalance=document.getElementById('witdBalance')
+let withdrawValue=parseInt(withdrawOldBalance.innerHTML)
+    withdrawOldBalance.innerHTML=updateWithInput+withdrawValue;
+let withdrawTotal=document.getElementById('totalbal');
+   const withdrawTotalBal=parseInt(withdrawTotal.innerHTML)
+    withdrawTotal.innerHTML=withdrawTotalBal-updateWithInput;
+}
+}

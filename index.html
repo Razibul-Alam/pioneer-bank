@@ -18,9 +18,9 @@
   <div id="loginarea" class="text-center">
     <h1>Welcome to pioneer bank</h1>
     <div class="submit">
-      <input type="email" name="" id="" class="form-control">
-      <input type="password" name="" id="" class="form-control">
-      <button id="logbtn" class="btn btn-primary">Enter</button>
+      <input type="email" name="" id="" class="form-control mb-3">
+      <input type="password" name="" id="" class="form-control mb-3">
+      <button id="logbtn" class="btn btn-primary form-control">Enter</button>
     </div>
   </div>
   <!-- calcalution section -->
@@ -29,7 +29,7 @@
     <div class="col-md-4">
       <div class="deposite">
         <h5>Deposite</h5>
-        <h2>$ <span id="depBalance">00</span></h2>
+        <h2>$<span id="depBalance">00</span></h2>
       </div>
     </div>
 
@@ -50,16 +50,16 @@
 
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6">
       <h5>Depoiste</h5>
       <input type="number" name="" id="depinpt"><br>
-      <button id="depbtn">Deposite</button>
+      <button id="depbtn" onclick="setAllValue('increase')">Deposite</button>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-lg-6">
       <h5>Withdraw</h5>
-      <input type="number" name="" id="widtinpt"><br>
-      <button id="widtbtn">withdraw</button>
+      <input type="number" name="" id="withinpt"><br>
+      <button id="widtbtn" onclick="setAllValue('decrease')">withdraw</button>
     </div>
   </div>
 </div>
