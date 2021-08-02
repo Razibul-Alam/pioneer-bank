@@ -8,9 +8,9 @@ document.getElementById('logbtn').addEventListener("click",function(){
 
 const setAllValue=(method)=>{
  if (method=='increase') {
-    let depositeInput=document.getElementById('depinpt');
+    let depositeInput=document.getElementById('depositeInput');
     let updateInput=parseInt(depositeInput.value)
-    let depositeOldBalance=document.getElementById('depBalance')
+    let depositeOldBalance=document.getElementById('depositebalance')
     let depositeValue=parseInt(depositeOldBalance.innerHTML)
         depositeOldBalance.innerText=updateInput+depositeValue;
     let oldTotal=document.getElementById('totalbal');
@@ -18,9 +18,9 @@ const setAllValue=(method)=>{
         oldTotal.innerHTML=oldTotalBal+updateInput;
  }
 else{
-    let withdrawInput=document.getElementById('withinpt');
+    let withdrawInput=document.getElementById('withdrawInput');
 let updateWithInput=parseInt(withdrawInput.value)
-let withdrawOldBalance=document.getElementById('witdBalance')
+let withdrawOldBalance=document.getElementById('withdrawbalance')
 let withdrawValue=parseInt(withdrawOldBalance.innerHTML)
     withdrawOldBalance.innerHTML=updateWithInput+withdrawValue;
 let withdrawTotal=document.getElementById('totalbal');
