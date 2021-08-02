@@ -7,22 +7,22 @@ document.getElementById('logbtn').addEventListener("click",function(){
 })
 
 const setAllValue=(method)=>{
- if (method=='increase') {
-    let depositeInput=document.getElementById('depositeInput');
-    let updateInput=parseInt(depositeInput.value)
-    let depositeOldBalance=document.getElementById('depositebalance')
-    let depositeValue=parseInt(depositeOldBalance.innerHTML)
-        depositeOldBalance.innerText=updateInput+depositeValue;
+    let InputValue=document.getElementById(`${method}Input`);
+    let oldBalance=document.getElementById(`${method}balance`)
+    let oldTotal=document.getElementById('totalbal')
+ if (method=='deposite') {
+    let updateInput=parseInt(InputValue.value)
+    let depositeValue=parseInt(oldBalance.innerHTML)
+        oldBalance.innerText=updateInput+depositeValue;
     let oldTotal=document.getElementById('totalbal');
        const oldTotalBal=parseInt(oldTotal.innerHTML)
         oldTotal.innerHTML=oldTotalBal+updateInput;
  }
 else{
-    let withdrawInput=document.getElementById('withdrawInput');
-let updateWithInput=parseInt(withdrawInput.value)
-let withdrawOldBalance=document.getElementById('withdrawbalance')
-let withdrawValue=parseInt(withdrawOldBalance.innerHTML)
-    withdrawOldBalance.innerHTML=updateWithInput+withdrawValue;
+let updateWithInput=parseInt(InputValue.value)
+let oldBalance=document.getElementById('withdrawbalance')
+let withdrawValue=parseInt(oldBalance.innerHTML)
+    oldBalance.innerHTML=updateWithInput+withdrawValue;
 let withdrawTotal=document.getElementById('totalbal');
    const withdrawTotalBal=parseInt(withdrawTotal.innerHTML)
     withdrawTotal.innerHTML=withdrawTotalBal-updateWithInput;
