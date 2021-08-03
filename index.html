@@ -15,51 +15,54 @@
 </head>
 
 <body>
-  <div id="loginarea" class="text-center">
-    <h1>Welcome to pioneer bank</h1>
-    <div class="submit">
-      <input type="email" name="" id="" class="form-control mb-3">
-      <input type="password" name="" id="" class="form-control mb-3">
-      <button id="logbtn" class="btn btn-primary form-control">Enter</button>
-    </div>
+<section class="row" id="loginarea">
+  <h1 class="text-center"> Welcome to our bank</h1>
+  <div class="d-flex justify-content-center">
+    <section class="col-lg-6 text-center ">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+    <button class="btn btn-primary form-control" id="logbtn">Log in</button>
+     </section>
   </div>
+</section>
   <!-- calcalution section -->
 <div id="calculation">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="deposite">
-        <h5>Deposite</h5>
-        <h2>$<span id="depositebalance">00</span></h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Deposite=$ <span id="depositebalance">00</span></h5>
+          <input type="number" name="" id="depositeInput">
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary px-5" id="" onclick="setAllValue('deposite')">Deposite</button>
+        </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="deposite">
-        <h5>Withdraw</h5>
-        <h2>$ <span id="withdrawbalance">00</span></h2>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Total balance=$ <span id="totalbal">00</span></h5>
+        </div>
+      
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="deposite">
-        <h5>Balance</h5>
-        <h2>$ <span id="totalbal">00</span></h2>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Withdraw=$ <span id="withdrawbalance">00</span></h5>
+          <input type="number" name="" id="withdrawInput">
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary px-5" id="" onclick="setAllValue('withdraw')">Withdraw</button>
+        </div>
       </div>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-lg-6">
-      <h5>Depoiste</h5>
-      <input type="number" name="" id="depositeInput"><br>
-      <button id="depbtn" onclick="setAllValue('deposite')">Deposite</button>
-    </div>
-
-    <div class="col-lg-6">
-      <h5>Withdraw</h5>
-      <input type="number" name="" id="withdrawInput"><br>
-      <button id="widtbtn" onclick="setAllValue('withdraw')">withdraw</button>
     </div>
   </div>
 </div>

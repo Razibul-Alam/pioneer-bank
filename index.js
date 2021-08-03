@@ -12,11 +12,12 @@ const setAllValue=(method)=>{
     let oldTotal=document.getElementById('totalbal');
  
     let updateInput=parseInt(InputValue.value)
+    console.log(updateInput)
     let numberInput=parseInt(oldBalance.innerHTML)
-
+    const oldTotalBal=parseInt(oldTotal.innerHTML)
+    console.log(oldTotalBal)
     if (updateInput>0) {
         oldBalance.innerText=updateInput+numberInput;
-       const oldTotalBal=parseInt(oldTotal.innerHTML)
         if (method=='deposite'){
             oldTotal.innerHTML=oldTotalBal+updateInput;
         }else{
@@ -26,7 +27,9 @@ const setAllValue=(method)=>{
                 oldTotal.innerHTML=oldTotalBal-updateInput;
             }else{
                 alert('wrong')
-                oldBalance.innerText=0
+                if (method=='withdraw') {
+                    // oldBalance.innerText=0
+                }
             }
         }
     }
